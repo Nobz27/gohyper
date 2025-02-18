@@ -1,0 +1,291 @@
+jQuery(document).ready(function($){
+    $('footer .widget_media_image > a').each(function(){
+        $(this).attr('target', '_blank');
+    });
+});
+jQuery(document).ready(function($) {
+
+    $('body:not(.elementor-editor-active) #carrowsel_counter_home > .elementor-container > .elementor-row').owlCarousel({
+        loop:false,
+        margin:0,
+        autoplay: true,
+        autoplayHoverPause: true,
+        responsiveClass:true,
+        responsive:{
+            0:{
+                items:1,
+                nav:true
+            },
+            600:{
+                items:2,
+                nav:true
+            },
+            700:{
+                items:3,
+                nav:true
+            },
+            1200:{
+                items:4,
+                nav:false,
+                loop:false,
+                autoplay: false
+            }
+        }
+    })
+
+	
+    $('body:not(.elementor-editor-active) .carrowsel_counter_inner > .elementor-container > .elementor-row').owlCarousel({
+        loop:false,
+        margin:0,
+        autoplay: true,
+        autoplayHoverPause: true,
+        responsiveClass:true,
+        responsive:{
+            0:{
+                items:1,
+                nav:true
+            },
+            600:{
+                items:1,
+                nav:true
+            },
+            700:{
+                items:3,
+                nav:true
+            },
+            1200:{
+                items:4,
+                nav:false,
+                loop:false,
+                autoplay: false
+            }
+        }
+    })
+	
+
+    $('body:not(.elementor-editor-active) .carrowsel_inner > .elementor-container > .elementor-row').owlCarousel({
+        loop:false,
+        margin:0,
+		nav:false,
+		arrows:false,
+        autoplay: true,
+        autoplayHoverPause: true,
+        responsiveClass:true,
+        responsive:{
+            0:{
+                items:1,
+                nav:true
+            },
+            600:{
+                items:1,
+                nav:true
+            },
+            700:{
+                items:3,
+                nav:true
+            },
+            1200:{
+                items:5,
+                nav:false,
+                loop:false,
+                autoplay: false
+            }
+        }
+    })	
+
+	$('body:not(.elementor-editor-active) .carrowsel_inner_2:not(.new_custom_sl) > .elementor-container > .elementor-row').owlCarousel({
+        loop:true,
+        margin:0,
+		nav:true,
+				 dots: true,
+				 dotsEach:1,
+		arrows:true,
+        autoplay: true,
+        autoplayHoverPause: true,
+        responsiveClass:true,
+        responsive:{
+            0:{
+                items:1,
+                nav:true,
+                loop:true,
+                autoplay: true
+            },
+            600:{
+                items:1,
+                nav:true,
+                loop:true,
+                autoplay: true
+            },
+            700:{
+                items:3,
+                nav:true,
+                loop:true,
+                autoplay: true
+            },
+            1200:{
+                items:5,
+                nav:true,
+                loop:true,
+                autoplay: true
+            }
+        }
+    })
+    
+    
+    
+	$('body:not(.elementor-editor-active) .carrowsel_inner_2.new_custom_sl > .elementor-container > .elementor-row').owlCarousel({
+        loop:true,
+        margin:0,
+		nav:true,
+				 dots: false,
+		arrows:true,
+        autoplay: true,
+    autoplayTimeout: 4000,
+    autoplaySpeed: 4000,
+    animateIn: 'linear',
+    animateOut: 'linear',
+        autoplayHoverPause: true,
+        responsiveClass:true,
+        responsive:{
+            0:{
+                items:2,
+                nav:true,
+                loop:true,
+                autoplay: true,
+        animateIn: 'linear',
+    animateOut: 'linear',
+        autoplayHoverPause: true,
+        responsiveClass:true,
+            },
+            600:{
+                items:2,
+                nav:true,
+                loop:true,
+                autoplay: true,
+        animateIn: 'linear',
+    animateOut: 'linear',
+        autoplayHoverPause: true,
+        responsiveClass:true,
+            },
+            700:{
+                items:3,
+                nav:true,
+                loop:true,
+                autoplay: true,
+                    animateIn: 'linear',
+    animateOut: 'linear',
+        autoplayHoverPause: true,
+        responsiveClass:true,
+            },
+            1200:{
+                items:5,
+                nav:true,
+                loop:true,
+                autoplay: true,
+                    animateIn: 'linear',
+    animateOut: 'linear',
+        autoplayHoverPause: true,
+        responsiveClass:true,
+            }
+        }
+    })
+    
+
+
+
+
+
+
+
+	$(".elementor-widget-neuron-nav-menu").each(function () {
+      var $menu = $(this);
+      $menu
+        .find(".m-nav-menu--mobile-icon")
+        .on("click", function (e) {
+          e.stopPropagation();
+          e.preventDefault();
+
+          $menu.find(".m-nav-menu--mobile-icon").toggleClass("active");
+        });
+    });
+	
+	$("#menu-main-menu-mobile-1 a.menu-item-icon").on("click", function (e) {
+			  e.stopPropagation();
+          e.preventDefault();
+			  alert("test");
+			  $(this).parent().toggleClass("active_sub")
+	});
+
+
+    //active megamenu in li parent
+    $('ul#menu-main-menu-mobile-1 > .menu-item-has-children > a:first-child').on('click', function(e){
+        e.preventDefault();
+        e.stopPropagation();
+        $(this).parents('li').find('.menu-item-icon').trigger('click');
+    });
+
+
+});
+
+// Toggle menu app
+jQuery(document).ready(function($){
+    $('._menu_app_action img').on('click', function(){
+        $('._menu_app_custom').slideToggle( "fast");
+    })
+})
+
+
+// Badges
+jQuery(document).ready(function($) {
+    $('._main_badges_section ._custom_evt_expand').on('click', function(){
+        var _this = $(this);
+        var itemBadges = $(this).parents('._main_badges_section').find('._section_box_badges');
+        if((itemBadges).is(':visible')){
+            itemBadges.hide();
+            _this.addClass('close_badges');
+        }else{
+            itemBadges.show();
+            _this.removeClass('close_badges');
+        }
+        
+    });
+
+    $('div#expandAllBadges').on('click', function(e){
+        e.preventDefault();
+        $('.evt_expa_hyer').removeClass('active_exp');
+        $(this).addClass('active_exp');
+        $('._main_badges_section.hyer_badges ._section_box_badges').show();
+        $('._main_badges_section.hyer_badges ._custom_evt_expand').removeClass('close_badges');
+		        $('._main_badges_section.customer_badges ._section_box_badges').show();
+        $('._main_badges_section.customer_badges ._custom_evt_expand').removeClass('close_badges');
+          
+    });
+    $('div#closeAllBadges').on('click', function(e){
+        e.preventDefault();
+        $('.evt_expa_hyer').removeClass('active_exp');
+        $(this).addClass('active_exp');
+        $('._main_badges_section.hyer_badges ._section_box_badges').hide();
+        $('._main_badges_section.hyer_badges ._custom_evt_expand').addClass('close_badges');
+				        $('._main_badges_section.customer_badges ._section_box_badges').hide();
+        $('._main_badges_section.customer_badges ._custom_evt_expand').addClass('close_badges');
+          
+    });
+
+    $('div#expandCustomerBadges').on('click', function(e){
+        e.preventDefault();
+        $('.evt_expa_customer').removeClass('active_exp');
+        $(this).addClass('active_exp');
+        $('._main_badges_section.customer_badges ._section_box_badges').show();
+        $('._main_badges_section.customer_badges ._custom_evt_expand').removeClass('close_badges');
+
+          
+    });
+    $('div#closeCustomerBadges').on('click', function(e){
+        e.preventDefault();
+        $('.evt_expa_customer').removeClass('active_exp');
+        $(this).addClass('active_exp');
+        $('._main_badges_section.customer_badges ._section_box_badges').hide();
+        $('._main_badges_section.customer_badges ._custom_evt_expand').addClass('close_badges');
+          
+    });
+});

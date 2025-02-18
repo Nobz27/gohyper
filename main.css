@@ -63,6 +63,7 @@ header,main,footer {
     height: 600px;
     border: 1px solid black;
     padding: 10px 20px;
+    
  }
  .container {
     background-image: url(./images/);
@@ -90,3 +91,24 @@ header,main,footer {
 .store-badges {
     margin-top: 50px;
 }
+/* reinventing section */
+#reinventing{
+    width: 100%;
+    height: 300px;
+    border: 1px solid black;
+  text-align: center;
+  padding: 20px 250px;
+  
+}
+#reinventing  h2{
+    font-size: 35px  ;
+}
+#reinventing p{
+    font-size: 25px;
+    margin-top: 20px;
+}
+#reinventing img {
+    background-color: lightgray;
+    margin-top: 20px;
+}
+
