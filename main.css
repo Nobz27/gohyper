@@ -48,7 +48,8 @@ header,main,footer {
     text-decoration: none;
     color:black;
  }
- span {
+  
+ .bottom-nav  span {
     background-color: white;
     border: 1px solid black;
     border-radius: 25px;
@@ -128,6 +129,7 @@ header,main,footer {
  .section-text{
    padding: 30px;
    flex: 1 ;
+  
 
 }
 .section-image img {
@@ -138,7 +140,25 @@ header,main,footer {
 list-style-type: none;
 
 }
-.section-text img:hover {
+#business-benefits .section-text ul li{
+   margin-top: 30px;
+   
+}
+
+#business-benefits .section-text span{
+   margin: 20px;
+   position: relative;
+   bottom: 30px;
+   
+}
+#business-benefits .section-text a {
+   
+   
+   text-decoration: none;
+   position: relative;
+   top:40px;
+}
+#business-benefits .section-text img:hover {
    background-color: blue;
 }
 /* section tusker Benefits */
@@ -160,30 +180,93 @@ list-style-type: none;
    background-color: lightblue;
    flex: 1;
 }
-/* section download buttons */
+#tasker .section-text ul li  {
+   margin-top: 30px;
+}
+#tasker .section-text a {
 
-#download-buttons {
-   display: flex;
-   justify-content: center;
-   align-items: center;
-}
 
-#download-buttons h2 {
-margin: 30px 40px;
+   position: relative;
+   top: 45px;
+   text-decoration: none;
+
 
 }
- .download-buttons img{
-   margin-top: 250px;
-   
-   
+#tasker .section-text span {
+   margin: 20px;
+   position: relative;
+   bottom: 25px;
 }
-.rates {
-   background-image: url(./Images_files/Background@2x-scaled.jpg);
-   background-size: cover;
-   border: 1px solid black;
-}
-/* section amazing partners */
-/* section people talking */
-#people-talking {
-   background-image: url(./Images_files/);
+
+@media (max-width: 768px) {
+
+   /* Top and Bottom navigation */
+   .top-nav ul, .bottom-nav ul {
+       flex-direction: column;
+       gap: 15px;
+       align-items: center;
+   }
+
+   .top-nav, .bottom-nav {
+       padding: 10px 20px;
+   }
+
+   /* Section Intro */
+   #intro h1 {
+       font-size: 35px;
+   }
+
+   #intro p {
+       font-size: 18px;
+   }
+
+   .note {
+       font-size: 18px;
+   }
+
+   /* Reinventing Section */
+   #reinventing {
+       padding: 20px;
+   }
+
+   #reinventing h2 {
+       font-size: 30px;
+   }
+
+   #reinventing p {
+       font-size: 20px;
+   }
+
+   /* Business Benefits Section */
+   #business-benefits {
+       flex-direction: column;
+   }
+
+   .section-image, .section-text {
+       flex: none;
+       width: 100%;
+       padding: 15px;
+   }
+
+   .section-text ul li {
+       margin-top: 15px;
+   }
+
+   /* Tasker Section */
+   #tasker {
+       flex-direction: column-reverse;
+   }
+
+   #tasker .section-image img {
+       width: 100%;
+       height: auto;
+   }
+
+   .section-text {
+       padding: 20px;
+   }
+
+   #tasker .section-text a {
+       top: 30px;
+   }
 }
